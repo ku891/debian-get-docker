@@ -1,6 +1,16 @@
 #!/bin/sh
 # Add Docker's official GPG key:
 sudo apt-get update
+if [ $? -eq 0 ]; then
+else
+  echo "====now install 'sudo'===="
+  apt-get uddate
+  if [ $? -eq 0 ]; then
+    echo "please use root user install sudo and then try it again!"
+    exit 1
+  fi
+  apt-get install sudo -y 		
+fi
 sudo apt-get install -y 'ca-certificates' 'curl'
 sudo install -m 0777 -d /etc/apt/keyrings
 echo '----------------------------------------------------------------------'
