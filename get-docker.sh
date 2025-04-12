@@ -1,9 +1,10 @@
 #!/bin/sh
 # Add Docker's official GPG key:
+
 sudo apt-get update
 if [ $? -ne 0 ]; then
   echo "====now install 'sudo'===="
-  apt-get uddate
+  apt-get update
   if [ $? -eq 0 ]; then
     echo "please use root user install sudo and then try it again!"
     exit 1
